@@ -31,7 +31,6 @@ string Counter_Rotate_Right(string s)
     res[1] = s[2], res[2] = s[6], res[4] = s[1], res[6] = s[9], res[8] = s[4], res[9] = s[8];
     return res;
 }
-vector<string> ans1, ans2;
 void Solve()
 {
     string start = "", end = "1238004765";
