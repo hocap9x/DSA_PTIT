@@ -40,8 +40,6 @@ double Closest(Point Px[], int n)
         return Brute_Force(Px, n);
     int mid = n / 2;
     Point midPoint = Px[mid];
-    Point Pl[mid];
-    Point Pr[n - mid];
     double dl = Closest(Px, mid);
     double dr = Closest(Px + mid, n - mid);
     double d = min(dl, dr);
