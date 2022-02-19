@@ -42,14 +42,6 @@ double Closest(Point Px[], int n)
     Point midPoint = Px[mid];
     Point Pl[mid];
     Point Pr[n - mid];
-    int l = 0, r = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (Px[i].x <= midPoint.x && l < mid)
-            Pl[l++] = Px[i];
-        else
-            Pr[r++] = Px[i];
-    }
     double dl = Closest(Px, mid);
     double dr = Closest(Px + mid, n - mid);
     double d = min(dl, dr);
