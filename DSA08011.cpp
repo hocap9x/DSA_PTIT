@@ -18,8 +18,9 @@ void Solve()
 {
     ll n;
     string start, end;
-    cin >> n >> start >> end;
-    set<string> a;
+    scanf("%lld", &n);
+    cin >> start >> end;
+    unordered_set<string> a;
     for (int i = 0; i < n; i++)
     {
         string x;
@@ -28,12 +29,12 @@ void Solve()
     }
     if (a.find(end) == a.end() || a.find(start) == a.end())
     {
-        cout << 0 << "\n";
+        printf("0\n");
         return;
     }
     if (start == end)
     {
-        cout << 1 << "\n";
+        printf("1\n");
         return;
     }
     unordered_map<string, ll> vis_s, vis_e;
@@ -53,12 +54,12 @@ void Solve()
                 vis_s[x] = cur1.step + 1;
                 if (x == end)
                 {
-                    cout << cur1.step + 1 << "\n";
+                    printf("%lld\n", cur1.step + 1);
                     return;
                 }
                 if (vis_e.count(x))
                 {
-                    cout << cur1.step + vis_e[x] << "\n";
+                    printf("%lld\n", cur1.step + vis_e[x]);
                     return;
                 }
             }
@@ -73,12 +74,12 @@ void Solve()
                 vis_e[x] = cur2.step + 1;
                 if (x == start)
                 {
-                    cout << cur2.step + 1 << "\n";
+                    printf("%lld\n", cur2.step + 1);
                     return;
                 }
                 if (vis_s.count(x))
                 {
-                    cout << cur2.step + vis_s[x] << "\n";
+                    printf("%lld\n", cur2.step + vis_s[x]);
                     return;
                 }
             }
@@ -89,8 +90,8 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    ll t;
-    cin >> t;
+    int t;
+    scanf("%d", &t);
     while (t--)
     {
         Solve();
